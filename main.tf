@@ -1,10 +1,12 @@
 resource "null_resource" "copy_execute" {
 
   connection {
-    type        = "ssh"
+    timeout     = "2m"
+    type        = "winrm"
     host        = var.ipAddress
     user        = var.userName
     password    = var.password
+
   }
 
 # Make sure that the .ssh directory exists in your server's user account home folder
