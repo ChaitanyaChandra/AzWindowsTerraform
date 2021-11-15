@@ -18,7 +18,7 @@ resource "null_resource" "copy_execute" {
   }
 
 # Use scp to copy the public key file generated previously on your client to the authorized_keys file on your server
-# scp C:\Users\username\.ssh\id_ed25519.pub user1@domain1@contoso.com:C:\Users\username\.ssh\authorized_keys
+# scp ~/.ssh/ServerKey.pub user1@domain1@contoso.com:C:\Users\username\.ssh\authorized_keys
     provisioner "file" {
     source      = "~/.ssh/ServerKey.pub"
     destination = "C:\\Users\\${var.userName}\\.ssh\\authorized_keys"
