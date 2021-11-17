@@ -15,7 +15,8 @@ resource "null_resource" "remote-exec-windows" {
       host     = var.ipAddress
       user     = var.userName
       password = var.password
-      port     = var.is_winrm_configured_for_ssl == "true" ? 5986 : 5985
+      port     = 8080
+ #     port     = var.is_winrm_configured_for_ssl == "true" ? 5986 : 5985
       https    = var.is_winrm_configured_for_ssl
       insecure = "true" #self-signed certificate
     }
@@ -32,7 +33,8 @@ resource "null_resource" "remote-exec-windows" {
       host     = var.ipAddress
       user     = var.userName
       password = var.password
-      port     = var.is_winrm_configured_for_ssl == "true" ? 5986 : 5985
+      port     = 8080
+ #     port     = var.is_winrm_configured_for_ssl == "true" ? 5986 : 5985
       https    = var.is_winrm_configured_for_ssl
       insecure = "true" #self-signed certificate
     }
